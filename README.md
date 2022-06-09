@@ -1,4 +1,4 @@
-Projeto lista de produtos com Vue.js
+# Projeto lista de produtos com Vue.js
 
 ## Framework utilizado
 
