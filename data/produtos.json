@@ -1,0 +1,58 @@
+[
+    {
+       "id":1,
+       "img": "https://cdn.shopify.com/s/files/1/1372/7079/products/jaleco_1024x1024.jpg?v=1556756665",
+       "nome":"Jaleco",       
+       "preco":10,
+       "estoque":2
+    },
+    {
+       "id":2,
+       "img": "https://m.media-amazon.com/images/I/418Cys0+VNL._AC_SY450_.jpg",
+       "nome":"Avental",
+       "preco":5,
+       "estoque":4
+    },
+    {
+       "id":3,
+       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSph_B654xaSCWHlgbxhmADoiKIT6QscmaMKw&usqp=CAU",
+       "nome":"Touca",
+       "preco":8,
+       "estoque":6
+    },
+    {
+       "id":4,
+       "img": "https://casadasograenxovais.fbitsstatic.net/img/p/travesseiro-fibra-siliconada-percal-200-fios-densidade-firme-arte-cazza-73674/366051-1.jpg?w=400&h=400&v=no-change&qs=ignore",
+       "nome":"Travisseiro",
+       "preco":1,
+       "estoque":5
+    },
+    {
+       "id":5,
+       "img": "https://portalmarlene.vteximg.com.br/arquivos/ids/166669-565-565/lencol-avulso-casal-com-elastico-percal-180-fios-star-havan-2-37.jpg?v=636915437330330000",
+       "nome":"Lençol",
+       "preco":9,
+       "estoque":2
+    },
+    {
+       "id":6,
+       "img": "https://www.casacanto.com.br/image/cache/data/Utilidades/Linha%20Copa%20e%20Cozinha/Porta%20Talheres/porta-talher-para-cozinha-brinox-a4870-700x700.jpg",
+       "nome":"Porta talher",
+       "preco":10,
+       "estoque":5
+    },
+    {
+       "id":7,
+       "img": "https://www.imperioartesmdf.com.br/wp-content/uploads/2019/07/Imperio_Artes_185.jpg",
+       "nome":"Porta absorvente",
+       "preco":1,
+       "estoque":10
+    },
+    {
+      "id":8,
+      "img": "https://lojazeusdobrasil.com.br/arquivos/produtos/imagens_adicionais/luvas-de-protecao-especial-para-corte-com-banho-de-poliuretano-kalipso-saara_2571.jpeg",
+      "nome":"Luvas",
+      "preco":10,
+      "estoque":2
+   }
+ ]

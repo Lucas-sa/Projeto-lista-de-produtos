@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projeto Vue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
+
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">      
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                  <img src="img/logo.png" alt="" width="30" class="d-inline-block align-text-top">
+                  <span class="pColor"> LOJA - Lux</span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-8 col-md-9">
+              <div class="pColor my-3 py-2 rounded bg-light text-center"><strong>Bem vindo a nossa loja online</strong></div>
+            </div>
+            <div class="col-4 col-md-3">
+              <div class="pColor my-3 py-2 rounded bg-light text-center"><strong>Seu carrinho: R${{valorCarrinho}}</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+
+            <div class="pColor col-6 col-md-3" v-for="produto in produtos" :key="produto.id">
+              <form @submit="selectProduto" method="post" action="">
+                <input type="hidden" name="id" :value="produto.id">
+                <div class="item p-4 my-3 mx-1 bg-light item">
+                  <div class="bg-white text-center pImg mb-2"><img :src="produto.img" height="200"></div>
+                  <div class="">Nome: {{produto.nome}} </div>
+                  <div class="">Valor: R${{produto.preco}} </div>
+                  <input type="submit" class=" form-control btn-primary mt-2" value="Adicionar produto">
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+    </div>
+
+    <script>
+      const { createApp, ref } = Vue
+      const produtos           = ref('')
+      const valorCarrinho      = ref(0)
+
+      function listarProdutos() {
+        fetch('data/produtos.json')
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response)
+          produtos.value = response
+        });
+      }listarProdutos()
+
+      function selectProduto(e) {
+        e.preventDefault();
+        const id = e.target.id.value - 1
+        valorCarrinho.value = valorCarrinho.value+produtos.value[id].preco
+        //console.log(result)
+        //result = result.replace('.', ',')
+        //valorCarrinho.value = result
+
+      }
+
+      createApp({
+        data() {
+          return {
+            produtos,
+            valorCarrinho,
+            selectProduto
+          }
+        }
+      }).mount('#app')
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

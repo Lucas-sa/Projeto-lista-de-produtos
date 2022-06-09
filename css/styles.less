@@ -1,0 +1,25 @@
+@color: #2196F3;
+@bRadius: 50px 10px 50px 10px;
+
+.pColor {
+    color: @color;
+}
+
+.item {
+    border: 1px solid;
+    border-color: @color;
+    border-radius: @bRadius;
+    cursor: pointer;
+}
+
+.item:hover{
+    animation-duration: 10s;
+    border: 2px solid;
+    border-color: @color;
+    box-shadow: 0px 3px 15px rgb(204, 204, 204);
+}
+
+.pImg {
+    border-radius: @bRadius;
+    overflow: hidden;
+}
